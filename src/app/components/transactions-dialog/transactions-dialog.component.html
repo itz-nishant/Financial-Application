@@ -1,0 +1,46 @@
+<h2>{{ data.mode === 'add' ? 'Add Transaction' : 'Edit Transaction' }}</h2>
+<form [formGroup]="transactionForm" (ngSubmit)="saveTransaction()">
+    <mat-form-field class="custom-datepicker">
+        <mat-label>Date</mat-label>
+        <input matInput [matDatepicker]="picker" formControlName="date" required>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="transactionForm.get('date')?.hasError('required')">Date is required</mat-error>
+    </mat-form-field>
+    
+
+    <mat-form-field>
+        <mat-label>Description</mat-label>
+        <input matInput type="text" formControlName="description" required>
+        <mat-error *ngIf="transactionForm.get('description')?.hasError('required')">Description is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Category</mat-label>
+        <mat-select formControlName="category" required>
+            <mat-option *ngFor="let category of categories" [value]="category.name">{{ category.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="transactionForm.get('category')?.hasError('required')">Category is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select formControlName="type" required>
+            <mat-option value="credit">Credit</mat-option>
+            <mat-option value="debit">Debit</mat-option>
+        </mat-select>
+        <mat-error *ngIf="transactionForm.get('type')?.hasError('required')">Transaction type is required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" required>
+        <mat-error *ngIf="transactionForm.get('amount')?.hasError('required')">Amount is required</mat-error>
+        <mat-error *ngIf="transactionForm.get('amount')?.hasError('maxDigits')">Amount can't have more than 8 digits</mat-error>
+    </mat-form-field>
+
+    <div class="button-container">
+        <button mat-raised-button color="primary" type="submit">{{ data.mode === 'add' ? 'Add' : 'Update' }}</button>
+        <button mat-raised-button color="warn" type="button" (click)="close()">Cancel</button>
+    </div>
+</form>

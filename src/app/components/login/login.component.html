@@ -1,0 +1,21 @@
+<div class="bg">
+  <div class="login-page">
+    <div class="login-container">
+      <h2>Login</h2>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput formControlName="username" />
+          <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Username is required</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password is required</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Login</button>
+        <p *ngIf="loginError" class="error-message">Invalid username or password. Please try again.</p>
+      </form>
+    </div>
+  </div>
+</div>

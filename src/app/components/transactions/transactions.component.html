@@ -1,0 +1,28 @@
+<app-navbar></app-navbar>
+<div class="transactions-container">
+    <h2>Transactions</h2>
+    <button mat-raised-button color="primary" (click)="openAddTransactionDialog()">Add Transaction</button>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let transaction of transactions; let i = index">
+            <td>{{ transaction.date | date }}</td>
+            <td>{{ transaction.description }}</td>
+            <td>{{ transaction.category }}</td>
+            <td>{{ transaction.amount }}</td>
+            <td>
+                <button mat-icon-button color="primary" (click)="openEditTransactionDialog(i)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteTransaction(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+        </tr>
+    </table>
+</div>

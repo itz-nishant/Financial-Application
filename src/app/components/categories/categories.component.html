@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<div class="categories-container">
+    <h2>Categories</h2>
+    <button mat-raised-button color="primary" (click)="openAddCategoryDialog()">Add Category</button>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Actions</th>
+            <th>Transaction</th>
+        </tr>
+        <tr *ngFor="let category of categories; let i = index">
+            <td>{{ category.name }}</td>
+            <td>
+                <button mat-icon-button color="primary" (click)="openEditCategoryDialog(i)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="deleteCategory(i)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </td>
+            <td>
+                <button class="view-button" (click)="viewCategoryTransactions(category)">View</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,24 @@
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.custom-datepicker .mat-datepicker-toggle-default-icon {
+  font-size: 30px; 
+}

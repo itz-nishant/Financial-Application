@@ -1,0 +1,36 @@
+<app-navbar></app-navbar>
+<h1 class="dashboard-heading">Dashboard</h1>
+<div class="dashboard-container">
+    <div class="summary-container">
+        <div class="summary-info">
+            <div class="summary-item">
+                <p class="summary-label">Balance</p>
+                <p class="summary-value">{{ balance | currency:'INR' }}</p>
+            </div>
+            <div class="summary-item">
+                <p class="summary-label">Total Income</p>
+                <p class="summary-value">{{ totalIncome | currency:'INR' }}</p>
+            </div>
+            <div class="summary-item">
+                <p class="summary-label">Total Expenses</p>
+                <p class="summary-value">{{ totalExpenses | currency:'INR' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="chart-container">
+        <div class="chart-selector">
+            <label for="chartType">Chart Type: </label>
+            <select id="chartType" [(ngModel)]="selectedChartType" (change)="changeChartType()">
+                <option value="bar">Bar Chart</option>
+                <option value="pie">Pie Chart</option>
+            </select>
+        </div>
+
+        <ngx-charts-bar-vertical *ngIf="selectedChartType === 'bar'" [view]="[400, 300]" [results]="chartData"
+            [xAxis]="true" [yAxis]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" xAxisLabel="Categories"
+            yAxisLabel="Amount"></ngx-charts-bar-vertical>
+            
+        <ngx-charts-pie-chart *ngIf="selectedChartType === 'pie'" [view]="[470, 330]" [scheme]="colorScheme"
+            [results]="pieChartData" [legend]="true" [labels]="true" [doughnut]="true"></ngx-charts-pie-chart>
+    </div>
+</div>

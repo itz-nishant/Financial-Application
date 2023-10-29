@@ -1,0 +1,122 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.dashboard-heading {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+  font-weight: 550;
+}
+
+.summary-container {
+  flex: 1;
+  padding: 10px;
+}
+
+.summary-info {
+  border-right: 1px solid #ccc;
+  padding-right: 20px;
+  margin-right: 20px;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.summary-label {
+  flex: 1;
+  font-weight: bold;
+}
+
+.summary-value {
+  font-weight: normal;
+}
+
+.chart-container {
+  flex: 1;
+  padding: 10px;
+}
+
+.chart-selector {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.chart-selector label {
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.chart-selector select {
+  font-size: 16px;
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  cursor: pointer;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.chart-selector select:hover {
+  background-color: #e0e0e0;
+  border-color: #aaa;
+}
+
+.chart-selector select:focus {
+  outline: none;
+  background-color: #fff;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+@media (max-width: 800px) {
+  .dashboard-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .summary-container,
+  .chart-container {
+    flex: none;
+    width: 100%;
+  }
+
+  .summary-info {
+    border-right: none;
+    padding-right: 0;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .chart-selector label {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .dashboard-heading {
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .summary-item {
+    font-size: 14px;
+  }
+}

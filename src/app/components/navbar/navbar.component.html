@@ -1,0 +1,33 @@
+<mat-toolbar class="custom-toolbar">
+    <span class="brand">Financial Management</span>
+    <span class="spacer"></span>
+    <div class="nav-buttons">
+        <ng-container *ngIf="isMobile; else desktopView">
+
+            <button mat-icon-button [routerLink]="'/dashboard'" [routerLinkActive]="'active'">
+                <mat-icon>dashboard</mat-icon>
+            </button>
+            <button mat-icon-button [routerLink]="'/transactions'" [routerLinkActive]="'active'">
+                <mat-icon>list_alt</mat-icon>
+            </button>
+            <button mat-icon-button [routerLink]="'/categories'" [routerLinkActive]="'active'">
+                <mat-icon>category</mat-icon>
+            </button>
+            <button mat-icon-button (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </ng-container>
+        <ng-template #desktopView>
+
+            <button mat-button routerLink="/dashboard" [routerLinkActive]="'active'">Dashboard</button>
+            <button mat-button routerLink="/transactions" [routerLinkActive]="'active'">Transactions</button>
+            <button mat-button routerLink="/categories" [routerLinkActive]="'active'">Categories</button>
+            <button mat-icon-button (click)="toggleLogoutButton()">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+            <button mat-icon-button *ngIf="showLogoutButton" (click)="logout()">
+                <mat-icon>exit_to_app</mat-icon>
+            </button>
+        </ng-template>
+    </div>
+</mat-toolbar>

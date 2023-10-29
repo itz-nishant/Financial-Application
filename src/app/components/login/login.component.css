@@ -1,0 +1,104 @@
+.login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../../assets/image/image.jpg") center/cover no-repeat;
+}
+
+.login-container {
+  max-width: 350px;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 242, 242, 0.9),
+    rgba(199, 193, 193, 0.741)
+  );
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 30px;
+  color: #333;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-error {
+  color: #d32f2f;
+}
+
+button {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-top: 15px;
+  text-align: center;
+}
+
+@media screen and (max-width: 500px) {
+  .login-page {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    background: url("../../../assets/image/image.jpg") center/cover no-repeat;
+  }
+  .login-container {
+    max-width: 350px;
+    margin-top: 10%;
+    margin-bottom: 40%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 242, 242, 0.9),
+      rgba(199, 193, 193, 0.741)
+    );
+  }
+}
+@media screen and (max-width: 492px) {
+  .login-container {
+    max-width: 350px;
+    margin-top: 20%;
+    margin-bottom: 50%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 242, 242, 0.9),
+      rgba(199, 193, 193, 0.741)
+    );
+  }
+}
+@media screen and (max-width: 330px) {
+  .login-container {
+    max-width: 350px;
+    margin-top: 20%;
+    margin-bottom: 100%;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(
+      to bottom,
+      rgba(245, 242, 242, 0.9),
+      rgba(199, 193, 193, 0.741)
+    );
+  }
+}

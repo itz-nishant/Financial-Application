@@ -1,0 +1,28 @@
+.mat-dialog-content {
+  max-width: 400px;
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+mat-error {
+  color: #d32f2f;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+button {
+  margin-left: 10px;
+}
